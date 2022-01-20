@@ -1,2 +1,1 @@
-# sc
-Smart Card server (Optional)
+# SMART CARD SERVER
