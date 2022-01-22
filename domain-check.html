@@ -66,7 +66,7 @@
                       <h1 class="mb-4" data-aos="fade-up">Domain Check</h1>
                       <div class="form-group mt-4" data-aos="fade-up" data-aos-delay="400">
                         <input name="text" type="text" class="form-control" 
-                        		id="File_URL" required>
+                        		id="extension" required>
                         <small id="emailHelp" class="form-text text-muted">Check if your desired domain is available in our server. (Only type the name. Format: mr-dexter)</small>
                       </div>
 						<style>
@@ -80,8 +80,8 @@
 								font-size: 20px;
 							}						
 						</style>
-                        <button id="Check_File" type="submit" data-aos="fade-up"  class="custom-btn design">Verify</button>
-						<p class="feedback" id="output"></p>
+                        <button id="validator" type="submit" data-aos="fade-up"  class="custom-btn design">Verify</button>
+			<p class="feedback" id="console"></p>
                     </div>
                </div>
           </div>
@@ -154,33 +154,6 @@
      <script src="https://onescan.github.io/app/js/aos.js"></script>
      <script src="https://onescan.github.io/app/js/owl.carousel.min.js"></script>
      <script src="https://onescan.github.io/app/js/custom.js"></script>
-	 <script>
-        $(document).ready(function() {
-            
-            $("#Check_File").click(function() {
-				
-				var url = new URL("https://onescan.github.io/sc/");
-                url += $("#File_URL").val();
-				url+="/index.html";
-				
-                if (url != "") {
-                    $.ajax({
-                        url: url,
-                        type: 'HEAD',
-                        error: function() 
-                        {
-                            $("#output").text("Domain availabe !!!");
-                        },
-                        success: function() 
-                        {
-                            $("#output").text('Location is already taken. Try something else.');
-                        }
-                    });
-                } else {
-                    $("#Output").text("Please enter File URL");
-                }
-            });
-        });
-    </script>
+     <script src="https://onescan.github.io/app/js/DomainVaidator.js"></script>
 </body>
 </html>
